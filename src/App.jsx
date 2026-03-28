@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -12,6 +12,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="home" element={<Navigate to="/" replace />} />
         <Route path="services" element={<Services />} />
         <Route path="services/:id" element={<ServiceDetail />} />
         <Route path="about" element={<About />} />
